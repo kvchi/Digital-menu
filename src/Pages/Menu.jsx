@@ -1,5 +1,5 @@
 import React from "react";
-import { menuSection } from "../data/MenuSection";
+import { menuSection } from "../data/menuSection";
 import { startersData } from "../data/startersData";
 import { saladsData } from "../data/saladsData";
 import { traditionalData } from "../data/traditionalData";
