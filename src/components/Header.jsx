@@ -39,7 +39,7 @@ export default function Header() {
     onChange={(e) => setSearchInput(e.target.value)}
     onKeyDown={handleSearch}
     placeholder="Search menu..."
-    className="outline-none w-full text-sm text-gray-700 placeholder:text-gray-400"
+    className="outline-none w-full text-[16px] text-gray-700 placeholder:text-gray-400"
   />
 </div>
 
