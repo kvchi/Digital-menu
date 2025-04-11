@@ -20,6 +20,7 @@ export default function Header() {
       } else {
         alert("Item not found");
       }
+      setSearchInput("");
     }
   };
   
