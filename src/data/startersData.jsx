@@ -1,38 +1,20 @@
 export const startersData = [
     {
         id: 1,
-        title: "VEGETABLE SPRINGROLLS",
-        amount: "4pcs",
-        price: "4,500",
+        title: "YAM & EGG SAUCE",
+        desc:"Soft boiled yam served with a rich tomato and egg sauce.",
+        price: "2,500",
     },
     {
         id: 2,
-        title: "CHICKEN SPRINGROLLS",
-        amount: "4pcs",
-        price: "5,500",
+        title: "TOASTED BREAD & EGG",
+        desc:"Crispy golden-brown toast with a side of spiced fried eggs.",
+        price: "2,500",
     },
     {
         id: 3,
-        title: "SHRIMP ROLLS",
-        amount: "4pcs",
-        price: "10,500",
+        title: "PAP & AKARA",
+        desc:"Creamy fermented corn porridge served with crunchy bean cakes.",
+        price: "1,000",
     },
-    {
-        id: 4,
-        title: "CHEESE ROLLS",
-        amount: "4pcs",
-        price: "5,500",
-    },
-    {
-        id: 5,
-        title: "CRISPY CHICKEN WING",
-        amount: "6pcs",
-        price: "7,000",
-    },
-    {
-        id: 6,
-        title: "LAVISH BITES COMBO",
-        amount: "2 vegetable springrolls, 2 chicken springrolls, 2 cheese rolls",
-        price: "14,500",
-    }
 ]
