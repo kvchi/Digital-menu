@@ -36,7 +36,7 @@ export default function Menu() {
         <div className="flex justify-center items-center mb-2">
           <h1 className="font-extrabold text-white border-b-2 ">Menu</h1>
         </div>
-        <div className="flex overflow-x-auto gap-4 mb-8 ">
+        <div className="flex overflow-x-auto gap-4 mb-8 no-scrollbar">
           {menuSection.map((section) => {
             return (
               <button
