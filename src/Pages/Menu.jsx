@@ -181,7 +181,7 @@ export default function Menu() {
           </div>
         </section>
       </section>
-      <section pepper-dish className="p-2">
+      <section id="pepper-dish" className="p-2">
         <h2 className="text-xl font-semibold border-b-2 border-b-red-400 mx-4 scroll-mt-48">
           PEPPER DISH
         </h2>
