@@ -81,7 +81,7 @@ export default function Menu() {
           })}
         </div>
       </section>
-      <section id="breakfast" className="pt-44 md:pt-44 lg:pt-48">
+      <section id="breakfast" className="pt-54 md:pt-44 lg:pt-48">
         <h2 className="text-xl font-semibold border-b-2 border-b-red-400 mx-4 scroll-mt-48">
           BREAKFAST
         </h2>
