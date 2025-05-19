@@ -3,19 +3,17 @@ import { logo } from "../assets/images";
 import { FaSearch } from "react-icons/fa";
 import { useState } from "react";
 
-
 export default function Header() {
-  
   const [isExpanded, setIsExpanded] = useState(false);
 
   const [searchInput, setSearchInput] = useState("");
 
   const handleSearch = (e) => {
-  if (e.key === "Enter") {
-    const input = searchInput.trim().toLowerCase();
-    let found = false;
+    if (e.key === "Enter") {
+      const input = searchInput.trim().toLowerCase();
+      let found = false;
 
-    const sectionHeaders = document.querySelectorAll("h2");
+      const sectionHeaders = document.querySelectorAll("h2");
       sectionHeaders.forEach((header) => {
         const title = header.textContent.trim().toLowerCase();
         if (title.includes(input)) {
@@ -24,38 +22,40 @@ export default function Header() {
         }
       });
 
-     // Search all menu item headers (h3)
-     if (!found) {
-      const menuItemTitles = document.querySelectorAll("section h3");
-      menuItemTitles.forEach((titleEl) => {
-        const titleText = titleEl.textContent.trim().toLowerCase();
-        if (titleText.includes(input)) {
-          // Scroll to the parent section first
-          const parentSection = titleEl.closest("section");
-          if (parentSection) {
-            parentSection.scrollIntoView({ behavior: "smooth", block: "start" });
-            
-            // Slight delay to ensure section is in view before focusing on specific item
-            setTimeout(() => {
-              titleEl.closest("div").classList.add("bg-yellow-100");
+      // Search all menu item headers (h3)
+      if (!found) {
+        const menuItemTitles = document.querySelectorAll("section h3");
+        menuItemTitles.forEach((titleEl) => {
+          const titleText = titleEl.textContent.trim().toLowerCase();
+          if (titleText.includes(input)) {
+            // Scroll to the parent section first
+            const parentSection = titleEl.closest("section");
+            if (parentSection) {
+              parentSection.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+
+              // Slight delay to ensure section is in view before focusing on specific item
               setTimeout(() => {
-                titleEl.closest("div").classList.remove("bg-yellow-100");
-              }, 2000);
-            }, 300);
+                titleEl.closest("div").classList.add("bg-yellow-100");
+                setTimeout(() => {
+                  titleEl.closest("div").classList.remove("bg-yellow-100");
+                }, 2000);
+              }, 300);
+            }
+            found = true;
           }
-          found = true;
-        }
-      });
+        });
+      }
+
+      if (!found) {
+        alert("Item not found");
+      }
+
+      setSearchInput(""); // Clear input after search
     }
-
-    if (!found) {
-      alert("Item not found");
-    }
-
-    setSearchInput(""); // Clear input after search
-  }
-};
-
+  };
 
   return (
     <header className="flex items-center justify-between px-4 py-3 bg-black shadow-md fixed w-full top-0 left-0 z-50">
@@ -63,9 +63,9 @@ export default function Header() {
         className="flex gap-4 items-center cursor-pointer"
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       >
-        
-        <h1 className="text-white text-lg md:text-2xl font-bold flex p-4">
-          THE HOOD LOUNGE
+        <h1 className="text-white text-[16px] md:text-2xl font-semibold md:font-bold flex flex-col items-center p-4 text-center">
+          THE
+          <span className="block">HOOD LOUNGE</span>
         </h1>
       </div>
 
@@ -89,7 +89,7 @@ export default function Header() {
             onChange={(e) => setSearchInput(e.target.value)}
             onKeyDown={handleSearch}
             placeholder="Search menu..."
-            className="ml-2 outline-none w-full text-[16px] text-gray-700 placeholder:text-gray-400 bg-transparent"
+            className="ml-2 outline-none w-50 text-[16px] text-gray-700 placeholder:text-gray-400 bg-transparent"
           />
         )}
       </div>
