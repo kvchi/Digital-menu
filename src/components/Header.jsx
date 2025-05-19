@@ -65,7 +65,7 @@ export default function Header() {
       >
         
         <h1 className="text-white text-lg md:text-2xl font-bold flex p-4">
-          HOOD LOUNGE
+          THE HOOD LOUNGE
         </h1>
       </div>
 
