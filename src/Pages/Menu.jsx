@@ -18,14 +18,45 @@ export default function Menu() {
 
   
 
-  const handleScroll = (id) => {
+  const handleScroll = (id, duration = 300) => {
     const yOffset = -180;
     const element = document.getElementById(id);
-    if (element) {
-      const y =
-        element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: "smooth" });
+    
+    if (!element) return;
+    
+    // Calculate the target position (same as your current code)
+    const startPosition = window.pageYOffset;
+    const targetPosition = element.getBoundingClientRect().top + startPosition + yOffset;
+    
+    // Animation variables
+    let startTime = null;
+    
+    // Animation function
+    function animation(currentTime) {
+      if (startTime === null) startTime = currentTime;
+      const timeElapsed = currentTime - startTime;
+      const progress = Math.min(timeElapsed / duration, 1);
+      
+      // Easing function for smoother movement
+      const ease = easeOutCubic(progress);
+      
+      // Calculate and set new position
+      const newPosition = startPosition + (targetPosition - startPosition) * ease;
+      window.scrollTo(0, newPosition);
+      
+      // Continue animation if not finished
+      if (timeElapsed < duration) {
+        requestAnimationFrame(animation);
+      }
     }
+    
+    // Easing function (makes scrolling feel natural)
+    function easeOutCubic(t) {
+      return 1 - Math.pow(1 - t, 3);
+    }
+    
+    // Start animation
+    requestAnimationFrame(animation);
   };
 
   
@@ -36,12 +67,12 @@ export default function Menu() {
         <div className="flex justify-center items-center mb-2">
           <h1 className="font-extrabold text-white border-b-2 ">Menu</h1>
         </div>
-        <div className="flex overflow-x-auto gap-4 mb-8 no-scrollbar">
+        <div className="flex overflow-x-auto gap-4 px-4 mb-8 no-scrollbar">
           {menuSection.map((section) => {
             return (
               <button
                 key={section.id}
-                onClick={() => handleScroll(section.anchorId)}
+                onClick={() => handleScroll(section.anchorId, 300)}
                 className="whitespace-nowrap text-sm font-semibold text-white hover:text-red-500 border-b-2 rounded-md mx-2 transition-colors duration-500 ease-in-out"
               >
                 {section.title}

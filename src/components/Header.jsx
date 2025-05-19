@@ -63,7 +63,7 @@ export default function Header() {
         className="flex gap-4 items-center cursor-pointer"
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       >
-        <img src={logo} className="w-[50px] h-[50px] rounded-[50%]" />
+        <img src={logo} alt="The HOOD LOGO" className="w-[50px] h-[50px] rounded-[50%] hidden md:flex" />
         <h1 className="text-white text-lg md:text-2xl font-bold hidden md:flex">
           HOOD LOUNGE
         </h1>
