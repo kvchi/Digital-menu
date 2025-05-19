@@ -64,7 +64,7 @@ export default function Menu() {
   return (
     <main className="relative">
       <section className="bg-gray-700 fixed w-full z-10 shadow-xl pt-20 ">
-        <div className="flex justify-center items-center mb-2">
+        <div className="flex justify-center items-center mb-2 mt-10">
           <h1 className="font-extrabold text-white border-b-2 ">Menu</h1>
         </div>
         <div className="flex overflow-x-auto gap-4 px-4 mb-8 no-scrollbar">
