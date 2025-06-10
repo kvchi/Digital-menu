@@ -64,7 +64,8 @@ export default function Header() {
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       >
         <h1 className="text-white text-[16px] md:text-2xl font-semibold md:font-bold flex flex-col items-center p-4 text-center">
-          Stallion luxury
+          THE
+          <span className="block">HOOD LOUNGE</span>
         </h1>
       </div>
 
