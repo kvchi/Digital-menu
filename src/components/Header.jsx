@@ -65,7 +65,7 @@ export default function Header() {
       >
         <h1 className="text-white text-[16px] md:text-2xl font-semibold md:font-bold flex flex-col items-center p-4 text-center">
           THE
-          <span className="block">HOOD LOUNGE</span>
+          <span className="block">Stallion Luxury</span>
         </h1>
       </div>
 
